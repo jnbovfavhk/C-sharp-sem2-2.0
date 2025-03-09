@@ -7,7 +7,7 @@ namespace ConsoleApp1
 {
     class Program
     {
-        public static void Main()
+        public static void Main1()
         {
             //Example.Main1();
             //return;
