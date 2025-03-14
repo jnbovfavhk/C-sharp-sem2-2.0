@@ -18,7 +18,8 @@ namespace ConsoleApp1.prac_20
                 " \r\nэлемента из «головы» списка, просмотр элементов в списке, а также дополнительные \r\nоперации в соответствии поставленной задачей:" +
                 "Удвоить вхождение каждого четного элемента в списке. ");
             MyList list = InputFromFile();
-            Console.WriteLine("Извлекаем из файла");
+            Console.WriteLine("Извлекаем из файла и записываем в output.txt");
+            WriteToFile(list);
             list.Print();
 
             Console.WriteLine("Добавляем 33, забираем один элемент, добавляем 0, 1");
@@ -55,7 +56,7 @@ namespace ConsoleApp1.prac_20
 
         public static void WriteToFile(MyList list)
         {
-            File.WriteAllText("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_20\\output.txt", list.ToString());
+            File.AppendAllText("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_20\\output.txt", list.ToString());
         }
     }
 }

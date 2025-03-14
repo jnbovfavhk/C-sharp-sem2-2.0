@@ -94,29 +94,34 @@ namespace ConsoleApp1.prac_20
 
                 while (Convert.ToInt32(head.Inf) % 2 == 0)
                 {
-                    Console.WriteLine(head.Inf);
+                    //Console.WriteLine(head.Inf);
                     head = head.Next;
-                    
+
                 }
-
-                temp = head;
-                
-
-                while (temp != null && temp.Next != null)
-                {
-                    if ((Convert.ToInt32(temp.Next.Inf) % 2) == 0)
-                    {
-
-                        temp.Next = temp.Next.Next;
-                    }
-                    temp = temp.Next;
-                }
-
-            } 
-            else
-            {
-                throw new Exception("Объекты внутри списка не являются целыми числами");
             }
+                temp = head;
+
+
+                while (temp.Next != null)
+                {
+                    if (head.Inf is int || head.Inf is long || head.Inf is short)
+                    {
+                        if ((Convert.ToInt32(temp.Next.Inf) % 2) == 0)
+                        {
+                            while (temp.Next != null && Convert.ToInt32(temp.Next.Inf) % 2 == 0)
+                            {
+                                temp.Next = temp.Next.Next;
+
+                            }
+                        }
+                        temp = temp.Next;
+                    }
+                    else
+                    {
+                        throw new Exception("Объекты внутри списка не являются целыми числами");
+                    }
+            }
+            
         }
     }
 }
