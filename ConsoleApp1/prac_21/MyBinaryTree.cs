@@ -205,7 +205,7 @@ namespace ConsoleApp1.prac_21
         {
             Node.Postorder(tree);
         }
-        
+
         // найти сумму нечетных значений
         public double OddSum()
         {
@@ -225,6 +225,34 @@ namespace ConsoleApp1.prac_21
                 }
                 FindOddSum(ref currentSum, r.right);
             }
+        }
+
+        public int FindMaxDepth(int value)
+        {
+            return FindMaxDepthRecursive(tree, value, 0);
+        }
+
+        private int FindMaxDepthRecursive(Node node, int value, int depth)
+        {
+            if (node == null)
+            {
+                return -1;
+            }
+
+            int currentDepth = -1;
+
+            // Проверяем текущий узел
+            if (double.Parse(node.inf.ToString()) == value)
+            {
+                currentDepth = depth; // Сохраняем текущую глубину, если значение совпадает
+            }
+
+            int leftDepth = FindMaxDepthRecursive(node.left, value, depth + 1);
+            int rightDepth = FindMaxDepthRecursive(node.right, value, depth + 1);
+
+            // Возвращаем максимальную глубину из найденных
+            return Math.Max(currentDepth, Math.Max(leftDepth, rightDepth));
+
         }
     }
 }
