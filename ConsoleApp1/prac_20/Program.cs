@@ -1,3 +1,4 @@
+using ConsoleApp1.prac_21;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +35,8 @@ namespace ConsoleApp1.prac_20
             list.Print();
             WriteToFile(list);
             Console.ReadLine();
+
+            MainPrac21.main();
         }
 
         public static MyList InputFromFile()
