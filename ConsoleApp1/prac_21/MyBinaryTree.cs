@@ -242,10 +242,10 @@ namespace ConsoleApp1.prac_21
 
             int currentDepth = -1;
 
-            // Проверяем текущий узел
+            
             if (double.Parse(node.inf.ToString()) == value)
             {
-                currentDepth = depth; // Сохраняем текущую глубину, если значение совпадает
+                currentDepth = depth; // Сохраняем текущую глубину, если значения текущего узла и искомого совпадают
             }
 
             int leftDepth = FindMaxDepthRecursive(node.left, value, depth + 1);
@@ -254,6 +254,35 @@ namespace ConsoleApp1.prac_21
             // Возвращаем максимальную глубину из найденных
             return Math.Max(currentDepth, Math.Max(leftDepth, rightDepth));
 
+        }
+
+        public bool IsBalanced()
+        {
+            return CheckBalance(tree) != -1;
+        }
+
+        
+        private int CheckBalance(Node node)
+        {
+            if (node == null)
+            {
+                return 0; // Высота пустого узла
+            }
+            
+            int leftHeight = CheckBalance(node.left);
+            if (leftHeight == -1) return -1;
+
+            int rightHeight = CheckBalance(node.right);
+            if (rightHeight == -1) return -1;
+
+
+            if (Math.Abs(leftHeight - rightHeight) > 1)
+            {
+                return -1;
+            }
+
+
+            return Math.Max(leftHeight, rightHeight) + 1;
         }
     }
 }

@@ -27,6 +27,10 @@ namespace ConsoleApp1.prac_21
             Console.WriteLine("Глубина этого узла(где для корня - 0) - " + tree.FindMaxDepth(givenNode));
 
             Console.ReadLine();
+
+            Console.WriteLine(tree.IsBalanced());
+
+            Console.ReadLine();
         }
 
         public static MyBinaryTree InputFromFile()
