@@ -24,11 +24,11 @@ namespace ConsoleApp1.prac_21
             Console.WriteLine("найти глубину заданного узла. \nЗадайте узел:");
             int givenNode = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Глубина этого узла(где для корня - 0) - " + tree.FindMaxDepth(givenNode));
+            Console.WriteLine("Глубина этого узла(где для корня - 0) -> " + tree.FindMaxDepth(givenNode));
 
             Console.ReadLine();
 
-            Console.WriteLine(tree.IsBalanced());
+            Console.WriteLine("Является ли дерево сбалансированным: " + tree.IsBalanced());
 
             Console.ReadLine();
         }

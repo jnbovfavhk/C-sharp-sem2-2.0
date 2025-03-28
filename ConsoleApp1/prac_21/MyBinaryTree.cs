@@ -228,6 +228,7 @@ namespace ConsoleApp1.prac_21
             }
         }
 
+        // Возвращает глубину заданного элемента; если элемента нет, то -1
         public int FindMaxDepth(int value)
         {
             return FindMaxDepthRecursive(tree, value, 0);
@@ -258,21 +259,21 @@ namespace ConsoleApp1.prac_21
 
         public bool IsBalanced()
         {
-            return CheckBalance(tree) != -1;
+            return Height(tree) != -1;
         }
 
-        
-        private int CheckBalance(Node node)
+        // Ищет высоту левого и правого поддерева; если у кого-то высоты отличаются больше, чем на 1, возвращает -1
+        private int Height(Node node)
         {
             if (node == null)
             {
                 return 0; // Высота пустого узла
             }
             
-            int leftHeight = CheckBalance(node.left);
+            int leftHeight = Height(node.left);
             if (leftHeight == -1) return -1;
 
-            int rightHeight = CheckBalance(node.right);
+            int rightHeight = Height(node.right);
             if (rightHeight == -1) return -1;
 
 

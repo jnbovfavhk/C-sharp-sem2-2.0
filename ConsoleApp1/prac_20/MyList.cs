@@ -123,5 +123,40 @@ namespace ConsoleApp1.prac_20
             }
             
         }
+
+        public void DoubleEvenElements()
+        {
+            Node r = head;
+
+            while (r != null)
+            {
+
+                if (r.Next == null)
+                {
+                    if (Convert.ToInt32(r.Inf) % 2 == 0)
+                    {
+                        r.Next = new Node(r.Inf);
+                        r = r.Next;
+                    }
+                    r = r.Next;
+                }
+
+
+                else
+                {
+                    while (Convert.ToInt32(r.Inf) % 2 == 0)
+                    {
+                        Node r2 = new Node(r.Inf);
+                        r2.Next = r.Next;
+                        r.Next = r2;
+                        r = r.Next.Next;
+                        // Console.WriteLine(r.Inf);
+                    }
+                    
+                    r = r.Next;
+                    
+                }
+            }
+        }
     }
 }
