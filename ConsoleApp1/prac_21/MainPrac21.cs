@@ -9,16 +9,23 @@ namespace ConsoleApp1.prac_21
 {
     class MainPrac21
     {
-        public static void main()
+        public static void Execute()
         {
             Console.WriteLine("В файле input.txt хранится последовательность целых чисел. По входной\n" +
 "последовательности построить дерево бинарного поиска и найти для негo сумму нечетных значений узлов дерева");
 
             MyBinaryTree tree = InputFromFile();
 
-            tree.Inorder();
+            tree.Preorder();
             Console.ReadLine();
             Console.WriteLine("Сумма нечетных элементов - " + tree.OddSum());
+            Console.ReadLine();
+
+            Console.WriteLine("найти глубину заданного узла. \nЗадайте узел:");
+            int givenNode = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Глубина этого узла(где для корня - 0) - " + tree.FindMaxDepth(givenNode));
+
             Console.ReadLine();
         }
 

@@ -5,9 +5,9 @@ using System.IO;
 
 namespace ConsoleApp1
 {
-    class Program
+    class MainPrac18
     {
-        public static void Main1()
+        public static void Execute()
         {
             //Example.Main1();
             //return;
@@ -40,6 +40,9 @@ namespace ConsoleApp1
             Print(figures2);
 
             Console.ReadLine();
+
+            File.Delete("C:\\Users\\belonozhkoin\\source\\repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json");
+            
         }
 
         
@@ -47,7 +50,7 @@ namespace ConsoleApp1
         {
             // подготовка строки json для сериализации с конввертацией из FigureConverter
             var jsonString = JsonConvert.SerializeObject(figures, Formatting.Indented, new FigureConverter());
-            using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\source\\repos\\ConsoleApp1\\ConsoleApp1\\prac_18\\data.json"))
+            using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\source\\repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
             //using (StreamWriter f = new StreamWriter("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
             {
                 f.Write(jsonString);
@@ -62,17 +65,17 @@ namespace ConsoleApp1
             List<Figure> figures = new List<Figure>();
 
             // Если файла нет, создать
-            if (!File.Exists("C:\\Users\\belonozhkoin\\source\\repos\\ConsoleApp1\\ConsoleApp1\\prac_18\\data.json"))
+            if (!File.Exists("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
             //if (!File.Exists("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
             {
-                using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\source\\repos\\ConsoleApp1\\ConsoleApp1\\prac_18\\data.json"))
+                using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
                 // using (StreamWriter f = new StreamWriter("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
                 {
                 }
             }
 
             // считать и десериализовать
-            using (StreamReader f = new StreamReader("C:\\Users\\belonozhkoin\\source\\repos\\ConsoleApp1\\ConsoleApp1\\prac_18\\data.json"))
+            using (StreamReader f = new StreamReader("C:\\Users\\belonozhkoin\\source\\repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
             // using (StreamReader f = new StreamReader("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
             {
                 String data = f.ReadToEnd();

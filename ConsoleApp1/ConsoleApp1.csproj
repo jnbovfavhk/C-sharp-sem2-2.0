@@ -50,12 +50,13 @@
     <Compile Include="prac_18\Figure.cs" />
     <Compile Include="prac_18\FigureConverter.cs" />
     <Compile Include="prac_18\PointFigure.cs" />
-    <Compile Include="prac_18\Program.cs" />
+    <Compile Include="prac_18\MainPrac18.cs" />
     <Compile Include="prac_20\MyList.cs" />
     <Compile Include="prac_20\Node.cs" />
-    <Compile Include="prac_20\Program.cs" />
+    <Compile Include="prac_20\MainPrac20.cs" />
     <Compile Include="prac_21\MainPrac21.cs" />
     <Compile Include="prac_21\MyBinaryTree.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="prac_18\Rectangle.cs" />
     <Compile Include="prac_18\Triangle.cs" />

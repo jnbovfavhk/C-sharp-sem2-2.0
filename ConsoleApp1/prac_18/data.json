@@ -1,0 +1,68 @@
+[
+  {
+    "Type": "Circle",
+    "x": 10.0,
+    "y": 0.0,
+    "radius": 1.0
+  },
+  {
+    "Type": "Rectangle",
+    "x": -2.0,
+    "y": -4.0,
+    "pointLeftUp": "(-3, -1,5)",
+    "pointRightUp": "(-1, -1,5)",
+    "pointLeftDown": "(-3, -6,5)",
+    "pointRightDown": "(-1, -6,5)",
+    "height": 5.0,
+    "width": 2.0
+  },
+  {
+    "Type": "Triangle",
+    "x": 1.5,
+    "y": 0.8660254037844386,
+    "point1": "(0, 0)",
+    "point2": "(3, 0)",
+    "point3": "(1,5, 2,59807621135332)"
+  },
+  {
+    "Type": "Triangle",
+    "x": 31.666666666666668,
+    "y": 3.3333333333333335,
+    "point1": "(100, 0)",
+    "point2": "(-10, 10)",
+    "point3": "(5, 0)"
+  },
+  {
+    "Type": "Circle",
+    "x": 10.0,
+    "y": 0.0,
+    "radius": 1.0
+  },
+  {
+    "Type": "Rectangle",
+    "x": -2.0,
+    "y": -4.0,
+    "pointLeftUp": "(-3, -1,5)",
+    "pointRightUp": "(-1, -1,5)",
+    "pointLeftDown": "(-3, -6,5)",
+    "pointRightDown": "(-1, -6,5)",
+    "height": 5.0,
+    "width": 2.0
+  },
+  {
+    "Type": "Triangle",
+    "x": 1.5,
+    "y": 0.8660254037844386,
+    "point1": "(0, 0)",
+    "point2": "(3, 0)",
+    "point3": "(1,5, 2,59807621135332)"
+  },
+  {
+    "Type": "Triangle",
+    "x": 31.666666666666668,
+    "y": 3.3333333333333335,
+    "point1": "(100, 0)",
+    "point2": "(-10, 10)",
+    "point3": "(5, 0)"
+  }
+]

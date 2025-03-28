@@ -29,7 +29,7 @@ namespace ConsoleApp1.prac_21
                 }
                 else
                 {
-                    if (((IComparable)(r.inf)).CompareTo(nodeInf) > 0)
+                    if (((IComparable)(r.inf)).CompareTo(nodeInf) >= 0)
                     {
                         Add(ref r.left, nodeInf);
                     }
@@ -47,6 +47,7 @@ namespace ConsoleApp1.prac_21
                     Console.Write("{0} ", r.inf);
                     Preorder(r.left);
                     Preorder(r.right);
+                    
                 }
             }
             public static void Inorder(Node r) //симметричный обход дерева

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.prac_20
 {
-    class Program
+    class MainPrac20
     {
-        public static void Main(String[] args)
+        public static void Execute()
         {
             Console.WriteLine("Реализовать типизированный однонаправленный список с тремя точками доступ (head, " +
                 "\r\ntail, temp) для хранения и обработки целых чисел." +
@@ -35,8 +35,6 @@ namespace ConsoleApp1.prac_20
             list.Print();
             WriteToFile(list);
             Console.ReadLine();
-
-            MainPrac21.main();
         }
 
         public static MyList InputFromFile()
