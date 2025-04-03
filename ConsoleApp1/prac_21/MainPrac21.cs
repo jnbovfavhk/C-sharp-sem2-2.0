@@ -39,9 +39,9 @@ namespace ConsoleApp1.prac_21
 
             Char[] separators = new Char[] { ' ', '\n', '\r', '\t' };
 
-            String context = File.ReadAllText("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_21\\input.txt");
+            String textFromFile = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\prac_21\\input.txt"));
 
-            int[] numbers = context.Split(separators, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray();
+            int[] numbers = textFromFile.Split(separators, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray();
 
             foreach (int number in numbers)
             {
