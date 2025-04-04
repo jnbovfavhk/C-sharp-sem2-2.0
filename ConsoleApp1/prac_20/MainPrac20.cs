@@ -18,6 +18,7 @@ namespace ConsoleApp1.prac_20
                 " Для списка должны быть реализованы \r\nбазовые операции: инициализация списка, добавление элемента в «хвост» списка, извлечение" +
                 " \r\nэлемента из «головы» списка, просмотр элементов в списке, а также дополнительные \r\nоперации в соответствии поставленной задачей:" +
                 "Удвоить вхождение каждого четного элемента в списке. ");
+
             MyList list = InputFromFile();
             Console.WriteLine("Извлекаем из файла и записываем в output.txt");
             WriteToFile(list);
@@ -43,10 +44,10 @@ namespace ConsoleApp1.prac_20
             MyList list = new MyList();
 
             Char[] separators = new Char[] { ' ', '\n', '\r', '\t' };
+            Console.WriteLine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\prac_20\\input.txt"));
+            String textFromFile = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\prac_20\\input.txt"));
 
-            String context = File.ReadAllText("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_20\\input.txt");
-
-            int[] numbers = context.Split(separators, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray();
+            int[] numbers = textFromFile.Split(separators, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray();
 
             foreach (int number in numbers)
             {
@@ -58,7 +59,7 @@ namespace ConsoleApp1.prac_20
 
         public static void WriteToFile(MyList list)
         {
-            File.AppendAllText("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_20\\output.txt", list.ToString());
+            File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\prac_20\\output.txt"), list.ToString());
         }
     }
 }
