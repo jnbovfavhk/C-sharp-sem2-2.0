@@ -131,20 +131,10 @@ namespace ConsoleApp1.prac_20
             while (temp != null)
             {
 
-                if (temp.Next == null)
+                if (temp.Next != null)
                 {
-                    if (Convert.ToInt32(temp.Inf) % 2 == 0)
-                    {
-                        temp.Next = new Node(temp.Inf);
-                        temp = temp.Next;
-                    }
-                    temp = temp.Next;
-                }
 
-
-                else
-                {
-                    while (Convert.ToInt32(temp.Inf) % 2 == 0)
+                    while (temp != null && Convert.ToInt32(temp.Inf) % 2 == 0)
                     {
                         Node r2 = new Node(temp.Inf);
                         r2.Next = temp.Next;
@@ -153,6 +143,23 @@ namespace ConsoleApp1.prac_20
                         // Console.WriteLine(r.Inf);
                     }
 
+                    // Если temp достиг последнего.Next
+                    if (temp != null) 
+                    { 
+                        temp = temp.Next;
+                    }
+
+                    
+                }
+
+                // Если temp стал последним
+                else
+                {
+                    if (Convert.ToInt32(temp.Inf) % 2 == 0)
+                    {
+                        temp.Next = new Node(temp.Inf);
+                        temp = temp.Next;
+                    }
                     temp = temp.Next;
                     
                 }

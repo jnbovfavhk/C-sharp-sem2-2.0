@@ -19,13 +19,7 @@ namespace ConsoleApp1.prac_21
             tree.Preorder();
             Console.ReadLine();
             Console.WriteLine("Сумма нечетных элементов - " + tree.OddSum());
-            Console.ReadLine();
             
-            Console.WriteLine("найти глубину заданного узла. \nЗадайте узел:");
-            int givenNode = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Глубина этого узла(где для корня - 0) -> " + tree.FindMaxDepth(givenNode));
-                
 
             Console.ReadLine();
 

@@ -24,13 +24,8 @@ namespace ConsoleApp1.prac_20
             WriteToFile(list);
             list.Print();
 
-            Console.WriteLine("Добавляем 33, забираем один элемент, добавляем 0, 1, 2");
-            list.Add(33);
-            list.Take();
-            list.Add(0);
-            list.Add(1);
-            list.Add(2);
-            list.Print();
+           
+            
             Console.WriteLine("Удваиваем четные элементы");
             list.DoubleEvenElements();
 
