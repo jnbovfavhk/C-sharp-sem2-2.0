@@ -50,7 +50,7 @@ namespace ConsoleApp1
         {
             // подготовка строки json для сериализации с конввертацией из FigureConverter
             var jsonString = JsonConvert.SerializeObject(figures, Formatting.Indented, new FigureConverter());
-            using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\source\\repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
+            using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\source\\repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json", false))
             //using (StreamWriter f = new StreamWriter("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
             {
                 f.Write(jsonString);
