@@ -8,7 +8,7 @@ using Logic;
 
 namespace ConsoleUI
 {
-    class UserInterface
+    class ConsoleInterface
     {
         private List<String> possibleFigureTypes = new List<string>() { "круг", "треугольник", "точка", "прямоугольник"};
         private FigureService figureService = new FigureService();
@@ -18,15 +18,15 @@ namespace ConsoleUI
             FigureService serv = new FigureService();
 
             Console.WriteLine("То, что у вас в контейнере:");
-            serv.GetDescription();
+            Console.WriteLine(serv.GetDescription());
             while (true)
             {
-                Console.WriteLine("Выберите действие: " +
-                    "1 Добавить фигуру" +
-                    "2 Вывести все фигуры" +
-                    "3 Удалить фигуру по индексу" +
-                    "4 Изменить фигуру по индексу" +
-                    "5 Выйти");
+                Console.WriteLine("Выберите действие: \n" +
+                    "1 Добавить фигуру\n" +
+                    "2 Вывести все фигуры\n" +
+                    "3 Удалить фигуру по индексу\n" +
+                    "4 Изменить фигуру по индексу\n" +
+                    "5 Выйти\n");
 
                 String option = Console.ReadLine();
 
@@ -65,27 +65,36 @@ namespace ConsoleUI
                     return;
                 }
 
-                
+                Figure fig;
                 switch (figureType)
                 {
+
                     case "точка":
-                        Figure fig = GetCircle();
+                        fig = GetPoint();
                         break;
 
                     case "прямоугольник":
-                        Figure fig = GetRectangle();
+                        fig = GetRectangle();
                         break;
 
-                    case "точка":
-                        Figure fig = GetCircle();
+                    case "круг":
+                        fig = GetCircle();
                         break;
 
-                    case "точка":
-                        Figure fig = GetCircle();
+                    case "треугольник":
+                        fig = GetTriangle();
                         break;
+
+                    default:
+                        Console.WriteLine("Некорректный тип");
+                        return;
                 }
 
-                figureService.ChangeByIndex(idx);
+                figureService.ChangeByIndex(idx, fig);
+            } catch (FormatException)
+            {
+                Console.WriteLine("Данные неправильного формата");
+                return;
             }
         }
 
@@ -116,7 +125,7 @@ namespace ConsoleUI
             String figureType = Console.ReadLine();
             if (!possibleFigureTypes.Contains(figureType))
             {
-                AddFigure();
+                Console.WriteLine("Такого типа фигуры нет");
                 return;
             }
 
@@ -176,7 +185,7 @@ namespace ConsoleUI
             catch (FormatException e)
             {
                 Console.WriteLine("Данные неправильного формата");
-                AddFigure();
+                
                 return null;
             }
         }
@@ -198,7 +207,7 @@ namespace ConsoleUI
             catch (FormatException e)
             {
                 Console.WriteLine("Данные неправильного формата");
-                AddFigure();
+                
                 return null;
             }
         }
@@ -227,7 +236,7 @@ namespace ConsoleUI
             catch (FormatException e)
             {
                 Console.WriteLine("Данные неправильного формата");
-                AddFigure();
+                
                 return null;
             }
         }
@@ -264,7 +273,6 @@ namespace ConsoleUI
             catch (FormatException e)
             {
                 Console.WriteLine("Данные неправильного формата");
-                AddFigure();
                 return null;
             }
         }

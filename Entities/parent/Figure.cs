@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Entities
 {
@@ -24,7 +25,8 @@ namespace Entities
 
         public override string ToString()
         {
-            return this.GetType().ToString() + "(" + x + ", " + y + ")";
+            String output = this.GetType().ToString() + "(" + x + ", " + y + ")";
+            return output.Split('.').Last();
         }
 
         public override bool Equals(object obj)

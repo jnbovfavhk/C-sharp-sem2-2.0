@@ -1,15 +1,22 @@
 ﻿
 
+using System;
+using System.Windows.Forms;
+
 namespace ConsoleUI
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        public static void Main(string[] args)
         {
-            UserInterface ui = new UserInterface();
-            ui.Start();
-            
-            
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainWindow());
+            //ConsoleInterface ui = new ConsoleInterface();
+            //ui.Start();
+
+
         }
     }
 }

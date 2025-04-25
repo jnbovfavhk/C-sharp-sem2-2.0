@@ -38,6 +38,7 @@ namespace Entities
         }
         public PointFigure(String str)
         {
+            str = str.Replace("PointFigure", "");
             str = str.Trim('(', ')');
             String strX = str.Split(' ')[0];
             String strY = str.Split(' ')[1];
@@ -49,11 +50,6 @@ namespace Entities
         public double distanceTo(Figure figure)
         {
             return Math.Sqrt(Math.Pow(x - figure.GetX(), 2) + Math.Pow(y - figure.GetY(), 2));
-        }
-
-        public override string ToString()
-        {
-            return "(" + x + ", " + y + ")";
         }
     }
 }

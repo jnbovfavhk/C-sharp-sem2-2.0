@@ -1,0 +1,26 @@
+[
+  {
+    "Type": "Rectangle",
+    "x": 0.0,
+    "y": 0.0,
+    "pointLeftUp": "PointFigure(-2,5, 5)",
+    "pointRightUp": "PointFigure(2,5, 5)",
+    "pointLeftDown": "PointFigure(-2,5, -5)",
+    "pointRightDown": "PointFigure(2,5, -5)",
+    "height": 10.0,
+    "width": 5.0
+  },
+  {
+    "Type": "PointFigure",
+    "x": 34.0,
+    "y": 0.0
+  },
+  {
+    "Type": "Triangle",
+    "x": 3.3333333333333335,
+    "y": 6.333333333333333,
+    "point1": "PointFigure(0, 0)",
+    "point2": "PointFigure(0, 9)",
+    "point3": "PointFigure(10, 10)"
+  }
+]

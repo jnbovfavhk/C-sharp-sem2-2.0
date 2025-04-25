@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities;
+using Data;
 
 namespace Logic
 {
     public class FigureService
     {
-        FigureRepository repo;
+        private FigureRepository repo = new FigureRepository();
 
         public void Add(Figure fig)
         {
@@ -29,6 +30,14 @@ namespace Logic
 
         public void ChangeByIndex(int idx, Figure fig)
         {
+            if (repo.Length < idx)
+            {
+                return;
+            }
+            if (idx < 0)
+            {
+                return;
+            }
             repo.ChangeByIndex(idx, fig);
         }
 

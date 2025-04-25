@@ -15,6 +15,15 @@ namespace Data.Repositories
 
         private List<Figure> figuresList;
 
+        private String filePath;
+        public int Length
+        {
+            get
+            {
+                return figuresList.Count;
+            }
+        }
+
         public void Add(Figure fig)
         {
             figuresList.Add(fig);
@@ -36,6 +45,7 @@ namespace Data.Repositories
                 outputString.Append(f.ToString());
                 outputString.Append("\n" + "Периметр - " + f.Perimeter());
                 outputString.Append("\n" + "Площадь - " + f.Area());
+                outputString.Append("\n");
             }
 
             return outputString.ToString();
@@ -54,6 +64,7 @@ namespace Data.Repositories
 
         public FigureRepository()
         {
+            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..\\..\\data\\data.json");
             converter = new FigureConverter();
             figuresList = Deserialize();
         }
@@ -63,12 +74,11 @@ namespace Data.Repositories
         {
             // подготовка строки json для сериализации с конввертацией из FigureConverter
             var jsonString = JsonConvert.SerializeObject(figuresList, Formatting.Indented, converter);
-            using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\source\\repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json", false))
-            //using (StreamWriter f = new StreamWriter("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
+            using (StreamWriter f = new StreamWriter(filePath, false))
             {
                 f.Write(jsonString);
             }
-            Console.WriteLine("Данные записаны");
+            
         }
 
 
@@ -77,18 +87,15 @@ namespace Data.Repositories
             List<Figure> figures = new List<Figure>();
 
             // Если файла нет, создать
-            if (!File.Exists("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
-            //if (!File.Exists("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
+            if (!File.Exists(filePath))
             {
-                using (StreamWriter f = new StreamWriter("C:\\Users\\belonozhkoin\\Source\\Repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
-                // using (StreamWriter f = new StreamWriter("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
+                using (StreamWriter f = new StreamWriter(filePath))
                 {
                 }
             }
 
             // считать и десериализовать
-            using (StreamReader f = new StreamReader("C:\\Users\\belonozhkoin\\source\\repos\\C-sharp-sem2-2.0\\ConsoleApp1\\prac_18\\data.json"))
-            // using (StreamReader f = new StreamReader("C:\\Users\\ilyab\\source\\repos\\ConsoleApp1\\prac_18\\data.json"))
+            using (StreamReader f = new StreamReader(filePath))
             {
                 String data = f.ReadToEnd();
                 if (data.Length > 0)
@@ -96,7 +103,7 @@ namespace Data.Repositories
                     try
                     {
                         figures = JsonConvert.DeserializeObject<List<Figure>>(data, new FigureConverter());
-                        Console.WriteLine("Данные взяты из файла data.json");
+                        
                     }
                     catch (NotSupportedException ex)
                     {
