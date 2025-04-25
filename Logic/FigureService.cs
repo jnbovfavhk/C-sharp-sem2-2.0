@@ -32,6 +32,9 @@ namespace Logic
             repo.ChangeByIndex(idx, fig);
         }
 
-
+        public void DeleteByIndex(int idx)
+        {
+            repo.DeleteByIndex(idx);
+        }
     }
 }

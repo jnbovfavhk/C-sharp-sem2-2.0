@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace Entities
 {
     [Serializable]
-    public class Rectangle : Figure
+    public 
+    class Rectangle : Figure
     {
 
         private PointFigure pointLeftUp;

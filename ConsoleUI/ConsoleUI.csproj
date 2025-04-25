@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{E1628231-84AB-4177-8A60-99F8FABAB8C2}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{723825eb-f192-4fb6-814f-69f563595097}</Project>
       <Name>Logic</Name>

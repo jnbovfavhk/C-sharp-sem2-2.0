@@ -41,6 +41,11 @@ namespace Data.Repositories
             return outputString.ToString();
         }
 
+        public void DeleteByIndex(int idx)
+        {
+            figuresList.RemoveAt(idx);
+        }
+
         public void ChangeByIndex(int idx, Figure fig)
         {
             figuresList[idx] = fig;
