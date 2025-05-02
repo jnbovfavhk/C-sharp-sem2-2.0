@@ -27,9 +27,8 @@ namespace Entities
 
         public override double Perimeter()
         {
-            return Math.Sqrt(Math.Pow((point1.GetX() - point2.GetX()), 2) + Math.Pow((point1.GetY() - point2.GetY()), 2)) +
-                Math.Sqrt(Math.Pow((point2.GetX() - point3.GetX()), 2) + Math.Pow((point2.GetY() - point3.GetY()), 2)) +
-                Math.Sqrt(Math.Pow((point3.GetX() - point1.GetX()), 2) + Math.Pow((point3.GetY() - point1.GetY()), 2));
+            
+            return CalculateDistance(point1, point2) + CalculateDistance(point2, point3) + CalculateDistance(point3, point1);
         }
 
         // по умолчанию имеем правильный треугольник с вершиной (0, 0) и стороной, длина которой - 3, лежащей на оси x
@@ -64,6 +63,13 @@ namespace Entities
         public List<PointFigure> GetPoints()
         {
             return new List<PointFigure>() { point1, point2, point3 };
+        }
+
+        private double CalculateDistance(PointFigure p1, PointFigure p2)
+        {
+            double dx = p1.GetX() - p2.GetX();
+            double dy = p1.GetY() - p2.GetY();
+            return Math.Sqrt(dx * dx + dy * dy);
         }
     }
 }

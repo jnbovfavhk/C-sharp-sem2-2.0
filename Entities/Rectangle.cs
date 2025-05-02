@@ -25,6 +25,16 @@ namespace Entities
             return (height + width) * 2;
         }
 
+        public double GetHeight()
+        {
+            return height;
+        }
+
+        public double GetWidth()
+        {
+            return width;
+        }
+
         public Rectangle()
         {
             pointLeftUp = new PointFigure(-10, 10);

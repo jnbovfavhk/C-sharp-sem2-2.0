@@ -45,5 +45,10 @@ namespace Logic
         {
             repo.DeleteByIndex(idx);
         }
+
+        public List<Figure> GetFiguresList()
+        {
+            return repo.GetFiguresList();
+        }
     }
 }

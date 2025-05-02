@@ -28,25 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("");
             this.pointFiguresPage = new System.Windows.Forms.TabPage();
             this.pointsListView = new System.Windows.Forms.ListView();
             this.pointXColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pointYColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pointFigureIdx = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pointYTextBox = new System.Windows.Forms.TextBox();
@@ -68,6 +54,7 @@
             this.circleRadiusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.circlePerimeterColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.circleAreaColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.circleFigureIdx = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,45 +72,45 @@
             this.triangleP3Column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.trianglePerimeterColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.triangleAreaColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.triangleFigureIdx = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label12 = new System.Windows.Forms.Label();
-            this.TriangleP3YTextBox = new System.Windows.Forms.TextBox();
+            this.triangleP3YTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.TriangleP3XTextBox = new System.Windows.Forms.TextBox();
+            this.triangleP3XTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TriangleP2YTextBox = new System.Windows.Forms.TextBox();
+            this.triangleP2YTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.TriangleP2XTextBox = new System.Windows.Forms.TextBox();
+            this.triangleP2XTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.TriangleP1YTextBox = new System.Windows.Forms.TextBox();
+            this.triangleP1YTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.TriangleP1XTextBox = new System.Windows.Forms.TextBox();
+            this.triangleP1XTextBox = new System.Windows.Forms.TextBox();
             this.deleteTriangleButton = new System.Windows.Forms.Button();
             this.addTriangleButton = new System.Windows.Forms.Button();
             this.rectanglesPage = new System.Windows.Forms.TabPage();
-            this.rectangtlesListView = new System.Windows.Forms.ListView();
+            this.rectanglesListView = new System.Windows.Forms.ListView();
             this.rectangleXColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rectangleYColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rectangleX1Column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rectangleY1Column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rectangleX2Column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rectangleY2Column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rectangleLeftUpColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rectangleRightDownColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rectangleHeightColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rectangleWidthColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rectanglePerimeterColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rectangleAreaColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rectangleFigureIdx = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label18 = new System.Windows.Forms.Label();
             this.rectangleWidthTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.rectangleHeightTextBox = new System.Windows.Forms.TextBox();
-            this.RectangleYTextBox = new System.Windows.Forms.TextBox();
-            this.RectangleXTextBox = new System.Windows.Forms.TextBox();
+            this.rectangleYTextBox = new System.Windows.Forms.TextBox();
+            this.rectangleXTextBox = new System.Windows.Forms.TextBox();
             this.deleteRectangleButton = new System.Windows.Forms.Button();
-            this.AddRectangleButton = new System.Windows.Forms.Button();
+            this.addRectangleButton = new System.Windows.Forms.Button();
             this.pointFiguresPage.SuspendLayout();
             this.figuresPage.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -154,21 +141,17 @@
             this.pointsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pointsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.pointXColumn,
-            this.pointYColumn});
+            this.pointYColumn,
+            this.pointFigureIdx});
             this.pointsListView.FullRowSelect = true;
             this.pointsListView.GridLines = true;
             this.pointsListView.HideSelection = false;
-            this.pointsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
             this.pointsListView.Location = new System.Drawing.Point(3, 122);
             this.pointsListView.Name = "pointsListView";
             this.pointsListView.Size = new System.Drawing.Size(785, 286);
             this.pointsListView.TabIndex = 16;
             this.pointsListView.UseCompatibleStateImageBehavior = false;
             this.pointsListView.View = System.Windows.Forms.View.Details;
-            this.pointsListView.SelectedIndexChanged += new System.EventHandler(this.pointsListView_SelectedIndexChanged);
             // 
             // pointXColumn
             // 
@@ -179,6 +162,11 @@
             // 
             this.pointYColumn.Text = "Y";
             this.pointYColumn.Width = 100;
+            // 
+            // pointFigureIdx
+            // 
+            this.pointFigureIdx.Text = "Index in Figures` list";
+            this.pointFigureIdx.Width = 135;
             // 
             // label5
             // 
@@ -255,10 +243,6 @@
             this.figuresListView.FullRowSelect = true;
             this.figuresListView.GridLines = true;
             this.figuresListView.HideSelection = false;
-            this.figuresListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
             this.figuresListView.Location = new System.Drawing.Point(3, 6);
             this.figuresListView.Name = "figuresListView";
             this.figuresListView.Size = new System.Drawing.Size(785, 402);
@@ -330,14 +314,11 @@
             this.circleYColumn,
             this.circleRadiusColumn,
             this.circlePerimeterColumn,
-            this.circleAreaColumn});
+            this.circleAreaColumn,
+            this.circleFigureIdx});
             this.circlesListView.FullRowSelect = true;
             this.circlesListView.GridLines = true;
             this.circlesListView.HideSelection = false;
-            this.circlesListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
             this.circlesListView.Location = new System.Drawing.Point(3, 121);
             this.circlesListView.Name = "circlesListView";
             this.circlesListView.Size = new System.Drawing.Size(785, 287);
@@ -363,12 +344,17 @@
             // circlePerimeterColumn
             // 
             this.circlePerimeterColumn.Text = "Perimeter";
-            this.circlePerimeterColumn.Width = 200;
+            this.circlePerimeterColumn.Width = 154;
             // 
             // circleAreaColumn
             // 
             this.circleAreaColumn.Text = "Area";
-            this.circleAreaColumn.Width = 200;
+            this.circleAreaColumn.Width = 140;
+            // 
+            // circleFigureIdx
+            // 
+            this.circleFigureIdx.Text = "Index in Figures` List";
+            this.circleFigureIdx.Width = 112;
             // 
             // label3
             // 
@@ -426,6 +412,7 @@
             this.deleteCirclebutton.TabIndex = 9;
             this.deleteCirclebutton.Text = "Delete";
             this.deleteCirclebutton.UseVisualStyleBackColor = true;
+            this.deleteCirclebutton.Click += new System.EventHandler(this.deleteCirclebutton_Click);
             // 
             // addCircleButton
             // 
@@ -441,20 +428,20 @@
             // 
             this.trianglesPage.Controls.Add(this.trianglesListView);
             this.trianglesPage.Controls.Add(this.label12);
-            this.trianglesPage.Controls.Add(this.TriangleP3YTextBox);
+            this.trianglesPage.Controls.Add(this.triangleP3YTextBox);
             this.trianglesPage.Controls.Add(this.label13);
             this.trianglesPage.Controls.Add(this.label14);
-            this.trianglesPage.Controls.Add(this.TriangleP3XTextBox);
+            this.trianglesPage.Controls.Add(this.triangleP3XTextBox);
             this.trianglesPage.Controls.Add(this.label6);
-            this.trianglesPage.Controls.Add(this.TriangleP2YTextBox);
+            this.trianglesPage.Controls.Add(this.triangleP2YTextBox);
             this.trianglesPage.Controls.Add(this.label7);
             this.trianglesPage.Controls.Add(this.label11);
-            this.trianglesPage.Controls.Add(this.TriangleP2XTextBox);
+            this.trianglesPage.Controls.Add(this.triangleP2XTextBox);
             this.trianglesPage.Controls.Add(this.label10);
-            this.trianglesPage.Controls.Add(this.TriangleP1YTextBox);
+            this.trianglesPage.Controls.Add(this.triangleP1YTextBox);
             this.trianglesPage.Controls.Add(this.label9);
             this.trianglesPage.Controls.Add(this.label8);
-            this.trianglesPage.Controls.Add(this.TriangleP1XTextBox);
+            this.trianglesPage.Controls.Add(this.triangleP1XTextBox);
             this.trianglesPage.Controls.Add(this.deleteTriangleButton);
             this.trianglesPage.Controls.Add(this.addTriangleButton);
             this.trianglesPage.Location = new System.Drawing.Point(4, 22);
@@ -474,14 +461,11 @@
             this.triangleP2Column,
             this.triangleP3Column,
             this.trianglePerimeterColumn,
-            this.triangleAreaColumn});
+            this.triangleAreaColumn,
+            this.triangleFigureIdx});
             this.trianglesListView.FullRowSelect = true;
             this.trianglesListView.GridLines = true;
             this.trianglesListView.HideSelection = false;
-            this.trianglesListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
             this.trianglesListView.Location = new System.Drawing.Point(3, 154);
             this.trianglesListView.Name = "trianglesListView";
             this.trianglesListView.Size = new System.Drawing.Size(785, 254);
@@ -517,12 +501,17 @@
             // trianglePerimeterColumn
             // 
             this.trianglePerimeterColumn.Text = "Perimeter";
-            this.trianglePerimeterColumn.Width = 140;
+            this.trianglePerimeterColumn.Width = 91;
             // 
             // triangleAreaColumn
             // 
             this.triangleAreaColumn.Text = "Area";
-            this.triangleAreaColumn.Width = 140;
+            this.triangleAreaColumn.Width = 87;
+            // 
+            // triangleFigureIdx
+            // 
+            this.triangleFigureIdx.Text = "Index in Figures` list";
+            this.triangleFigureIdx.Width = 107;
             // 
             // label12
             // 
@@ -533,12 +522,12 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "y";
             // 
-            // TriangleP3YTextBox
+            // triangleP3YTextBox
             // 
-            this.TriangleP3YTextBox.Location = new System.Drawing.Point(510, 109);
-            this.TriangleP3YTextBox.Name = "TriangleP3YTextBox";
-            this.TriangleP3YTextBox.Size = new System.Drawing.Size(34, 20);
-            this.TriangleP3YTextBox.TabIndex = 35;
+            this.triangleP3YTextBox.Location = new System.Drawing.Point(510, 109);
+            this.triangleP3YTextBox.Name = "triangleP3YTextBox";
+            this.triangleP3YTextBox.Size = new System.Drawing.Size(34, 20);
+            this.triangleP3YTextBox.TabIndex = 35;
             // 
             // label13
             // 
@@ -558,12 +547,12 @@
             this.label14.TabIndex = 33;
             this.label14.Text = "point3";
             // 
-            // TriangleP3XTextBox
+            // triangleP3XTextBox
             // 
-            this.TriangleP3XTextBox.Location = new System.Drawing.Point(420, 109);
-            this.TriangleP3XTextBox.Name = "TriangleP3XTextBox";
-            this.TriangleP3XTextBox.Size = new System.Drawing.Size(34, 20);
-            this.TriangleP3XTextBox.TabIndex = 32;
+            this.triangleP3XTextBox.Location = new System.Drawing.Point(420, 109);
+            this.triangleP3XTextBox.Name = "triangleP3XTextBox";
+            this.triangleP3XTextBox.Size = new System.Drawing.Size(34, 20);
+            this.triangleP3XTextBox.TabIndex = 32;
             // 
             // label6
             // 
@@ -574,12 +563,12 @@
             this.label6.TabIndex = 31;
             this.label6.Text = "y";
             // 
-            // TriangleP2YTextBox
+            // triangleP2YTextBox
             // 
-            this.TriangleP2YTextBox.Location = new System.Drawing.Point(510, 68);
-            this.TriangleP2YTextBox.Name = "TriangleP2YTextBox";
-            this.TriangleP2YTextBox.Size = new System.Drawing.Size(34, 20);
-            this.TriangleP2YTextBox.TabIndex = 30;
+            this.triangleP2YTextBox.Location = new System.Drawing.Point(510, 68);
+            this.triangleP2YTextBox.Name = "triangleP2YTextBox";
+            this.triangleP2YTextBox.Size = new System.Drawing.Size(34, 20);
+            this.triangleP2YTextBox.TabIndex = 30;
             // 
             // label7
             // 
@@ -599,12 +588,12 @@
             this.label11.TabIndex = 28;
             this.label11.Text = "point2";
             // 
-            // TriangleP2XTextBox
+            // triangleP2XTextBox
             // 
-            this.TriangleP2XTextBox.Location = new System.Drawing.Point(420, 68);
-            this.TriangleP2XTextBox.Name = "TriangleP2XTextBox";
-            this.TriangleP2XTextBox.Size = new System.Drawing.Size(34, 20);
-            this.TriangleP2XTextBox.TabIndex = 27;
+            this.triangleP2XTextBox.Location = new System.Drawing.Point(420, 68);
+            this.triangleP2XTextBox.Name = "triangleP2XTextBox";
+            this.triangleP2XTextBox.Size = new System.Drawing.Size(34, 20);
+            this.triangleP2XTextBox.TabIndex = 27;
             // 
             // label10
             // 
@@ -615,12 +604,12 @@
             this.label10.TabIndex = 26;
             this.label10.Text = "y";
             // 
-            // TriangleP1YTextBox
+            // triangleP1YTextBox
             // 
-            this.TriangleP1YTextBox.Location = new System.Drawing.Point(510, 32);
-            this.TriangleP1YTextBox.Name = "TriangleP1YTextBox";
-            this.TriangleP1YTextBox.Size = new System.Drawing.Size(34, 20);
-            this.TriangleP1YTextBox.TabIndex = 25;
+            this.triangleP1YTextBox.Location = new System.Drawing.Point(510, 32);
+            this.triangleP1YTextBox.Name = "triangleP1YTextBox";
+            this.triangleP1YTextBox.Size = new System.Drawing.Size(34, 20);
+            this.triangleP1YTextBox.TabIndex = 25;
             // 
             // label9
             // 
@@ -640,12 +629,12 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "point1";
             // 
-            // TriangleP1XTextBox
+            // triangleP1XTextBox
             // 
-            this.TriangleP1XTextBox.Location = new System.Drawing.Point(420, 32);
-            this.TriangleP1XTextBox.Name = "TriangleP1XTextBox";
-            this.TriangleP1XTextBox.Size = new System.Drawing.Size(34, 20);
-            this.TriangleP1XTextBox.TabIndex = 18;
+            this.triangleP1XTextBox.Location = new System.Drawing.Point(420, 32);
+            this.triangleP1XTextBox.Name = "triangleP1XTextBox";
+            this.triangleP1XTextBox.Size = new System.Drawing.Size(34, 20);
+            this.triangleP1XTextBox.TabIndex = 18;
             // 
             // deleteTriangleButton
             // 
@@ -655,6 +644,7 @@
             this.deleteTriangleButton.TabIndex = 17;
             this.deleteTriangleButton.Text = "Delete";
             this.deleteTriangleButton.UseVisualStyleBackColor = true;
+            this.deleteTriangleButton.Click += new System.EventHandler(this.deleteTriangleButton_Click);
             // 
             // addTriangleButton
             // 
@@ -664,20 +654,21 @@
             this.addTriangleButton.TabIndex = 16;
             this.addTriangleButton.Text = "Add";
             this.addTriangleButton.UseVisualStyleBackColor = true;
+            this.addTriangleButton.Click += new System.EventHandler(this.addTriangleButton_Click);
             // 
             // rectanglesPage
             // 
-            this.rectanglesPage.Controls.Add(this.rectangtlesListView);
+            this.rectanglesPage.Controls.Add(this.rectanglesListView);
             this.rectanglesPage.Controls.Add(this.label18);
             this.rectanglesPage.Controls.Add(this.rectangleWidthTextBox);
             this.rectanglesPage.Controls.Add(this.label15);
             this.rectanglesPage.Controls.Add(this.label16);
             this.rectanglesPage.Controls.Add(this.label17);
             this.rectanglesPage.Controls.Add(this.rectangleHeightTextBox);
-            this.rectanglesPage.Controls.Add(this.RectangleYTextBox);
-            this.rectanglesPage.Controls.Add(this.RectangleXTextBox);
+            this.rectanglesPage.Controls.Add(this.rectangleYTextBox);
+            this.rectanglesPage.Controls.Add(this.rectangleXTextBox);
             this.rectanglesPage.Controls.Add(this.deleteRectangleButton);
-            this.rectanglesPage.Controls.Add(this.AddRectangleButton);
+            this.rectanglesPage.Controls.Add(this.addRectangleButton);
             this.rectanglesPage.Location = new System.Drawing.Point(4, 22);
             this.rectanglesPage.Name = "rectanglesPage";
             this.rectanglesPage.Size = new System.Drawing.Size(791, 414);
@@ -685,79 +676,72 @@
             this.rectanglesPage.Text = "Прямоугольники";
             this.rectanglesPage.UseVisualStyleBackColor = true;
             // 
-            // rectangtlesListView
+            // rectanglesListView
             // 
-            this.rectangtlesListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rectangtlesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.rectanglesListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rectanglesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.rectangleXColumn,
             this.rectangleYColumn,
-            this.rectangleX1Column,
-            this.rectangleY1Column,
-            this.rectangleX2Column,
-            this.rectangleY2Column,
+            this.rectangleLeftUpColumn,
+            this.rectangleRightDownColumn,
             this.rectangleHeightColumn,
             this.rectangleWidthColumn,
             this.rectanglePerimeterColumn,
-            this.rectangleAreaColumn});
-            this.rectangtlesListView.FullRowSelect = true;
-            this.rectangtlesListView.GridLines = true;
-            this.rectangtlesListView.HideSelection = false;
-            this.rectangtlesListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem13,
-            listViewItem14,
-            listViewItem15});
-            this.rectangtlesListView.Location = new System.Drawing.Point(3, 126);
-            this.rectangtlesListView.Name = "rectangtlesListView";
-            this.rectangtlesListView.Size = new System.Drawing.Size(785, 282);
-            this.rectangtlesListView.TabIndex = 26;
-            this.rectangtlesListView.UseCompatibleStateImageBehavior = false;
-            this.rectangtlesListView.View = System.Windows.Forms.View.Details;
+            this.rectangleAreaColumn,
+            this.rectangleFigureIdx});
+            this.rectanglesListView.FullRowSelect = true;
+            this.rectanglesListView.GridLines = true;
+            this.rectanglesListView.HideSelection = false;
+            this.rectanglesListView.Location = new System.Drawing.Point(3, 126);
+            this.rectanglesListView.Name = "rectanglesListView";
+            this.rectanglesListView.Size = new System.Drawing.Size(785, 282);
+            this.rectanglesListView.TabIndex = 26;
+            this.rectanglesListView.UseCompatibleStateImageBehavior = false;
+            this.rectanglesListView.View = System.Windows.Forms.View.Details;
             // 
             // rectangleXColumn
             // 
             this.rectangleXColumn.Text = "X";
-            this.rectangleXColumn.Width = 70;
+            this.rectangleXColumn.Width = 46;
             // 
             // rectangleYColumn
             // 
             this.rectangleYColumn.Text = "Y";
-            this.rectangleYColumn.Width = 70;
+            this.rectangleYColumn.Width = 45;
             // 
-            // rectangleX1Column
+            // rectangleLeftUpColumn
             // 
-            this.rectangleX1Column.Text = "Left Up X";
+            this.rectangleLeftUpColumn.Text = "Left Up";
             // 
-            // rectangleY1Column
+            // rectangleRightDownColumn
             // 
-            this.rectangleY1Column.Text = "Left Up Y";
-            // 
-            // rectangleX2Column
-            // 
-            this.rectangleX2Column.Text = "Right Down X";
-            // 
-            // rectangleY2Column
-            // 
-            this.rectangleY2Column.Text = "Right Down Y";
+            this.rectangleRightDownColumn.Text = "Right Down";
+            this.rectangleRightDownColumn.Width = 80;
             // 
             // rectangleHeightColumn
             // 
             this.rectangleHeightColumn.Text = "Height";
-            this.rectangleHeightColumn.Width = 80;
+            this.rectangleHeightColumn.Width = 74;
             // 
             // rectangleWidthColumn
             // 
             this.rectangleWidthColumn.Text = "Width";
-            this.rectangleWidthColumn.Width = 80;
+            this.rectangleWidthColumn.Width = 75;
             // 
             // rectanglePerimeterColumn
             // 
             this.rectanglePerimeterColumn.Text = "Perimeter";
-            this.rectanglePerimeterColumn.Width = 130;
+            this.rectanglePerimeterColumn.Width = 78;
             // 
             // rectangleAreaColumn
             // 
             this.rectangleAreaColumn.Text = "Area";
-            this.rectangleAreaColumn.Width = 130;
+            this.rectangleAreaColumn.Width = 75;
+            // 
+            // rectangleFigureIdx
+            // 
+            this.rectangleFigureIdx.Text = "Index in Figures` list";
+            this.rectangleFigureIdx.Width = 108;
             // 
             // label18
             // 
@@ -809,19 +793,19 @@
             this.rectangleHeightTextBox.Size = new System.Drawing.Size(100, 20);
             this.rectangleHeightTextBox.TabIndex = 20;
             // 
-            // RectangleYTextBox
+            // rectangleYTextBox
             // 
-            this.RectangleYTextBox.Location = new System.Drawing.Point(157, 75);
-            this.RectangleYTextBox.Name = "RectangleYTextBox";
-            this.RectangleYTextBox.Size = new System.Drawing.Size(100, 20);
-            this.RectangleYTextBox.TabIndex = 19;
+            this.rectangleYTextBox.Location = new System.Drawing.Point(157, 75);
+            this.rectangleYTextBox.Name = "rectangleYTextBox";
+            this.rectangleYTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rectangleYTextBox.TabIndex = 19;
             // 
-            // RectangleXTextBox
+            // rectangleXTextBox
             // 
-            this.RectangleXTextBox.Location = new System.Drawing.Point(31, 75);
-            this.RectangleXTextBox.Name = "RectangleXTextBox";
-            this.RectangleXTextBox.Size = new System.Drawing.Size(100, 20);
-            this.RectangleXTextBox.TabIndex = 18;
+            this.rectangleXTextBox.Location = new System.Drawing.Point(31, 75);
+            this.rectangleXTextBox.Name = "rectangleXTextBox";
+            this.rectangleXTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rectangleXTextBox.TabIndex = 18;
             // 
             // deleteRectangleButton
             // 
@@ -831,15 +815,17 @@
             this.deleteRectangleButton.TabIndex = 17;
             this.deleteRectangleButton.Text = "Delete";
             this.deleteRectangleButton.UseVisualStyleBackColor = true;
+            this.deleteRectangleButton.Click += new System.EventHandler(this.deleteRectangleButton_Click);
             // 
-            // AddRectangleButton
+            // addRectangleButton
             // 
-            this.AddRectangleButton.Location = new System.Drawing.Point(31, 22);
-            this.AddRectangleButton.Name = "AddRectangleButton";
-            this.AddRectangleButton.Size = new System.Drawing.Size(76, 29);
-            this.AddRectangleButton.TabIndex = 16;
-            this.AddRectangleButton.Text = "Add";
-            this.AddRectangleButton.UseVisualStyleBackColor = true;
+            this.addRectangleButton.Location = new System.Drawing.Point(31, 22);
+            this.addRectangleButton.Name = "addRectangleButton";
+            this.addRectangleButton.Size = new System.Drawing.Size(76, 29);
+            this.addRectangleButton.TabIndex = 16;
+            this.addRectangleButton.Text = "Add";
+            this.addRectangleButton.UseVisualStyleBackColor = true;
+            this.addRectangleButton.Click += new System.EventHandler(this.addRectangleButton_Click);
             // 
             // MainWindow
             // 
@@ -886,30 +872,30 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TriangleP1XTextBox;
+        private System.Windows.Forms.TextBox triangleP1XTextBox;
         private System.Windows.Forms.Button deleteTriangleButton;
         private System.Windows.Forms.Button addTriangleButton;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox TriangleP3YTextBox;
+        private System.Windows.Forms.TextBox triangleP3YTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TriangleP3XTextBox;
+        private System.Windows.Forms.TextBox triangleP3XTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TriangleP2YTextBox;
+        private System.Windows.Forms.TextBox triangleP2YTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox TriangleP2XTextBox;
+        private System.Windows.Forms.TextBox triangleP2XTextBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TriangleP1YTextBox;
+        private System.Windows.Forms.TextBox triangleP1YTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox rectangleHeightTextBox;
-        private System.Windows.Forms.TextBox RectangleYTextBox;
-        private System.Windows.Forms.TextBox RectangleXTextBox;
+        private System.Windows.Forms.TextBox rectangleYTextBox;
+        private System.Windows.Forms.TextBox rectangleXTextBox;
         private System.Windows.Forms.Button deleteRectangleButton;
-        private System.Windows.Forms.Button AddRectangleButton;
+        private System.Windows.Forms.Button addRectangleButton;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox rectangleWidthTextBox;
         private System.Windows.Forms.ListView figuresListView;
@@ -931,7 +917,7 @@
         private System.Windows.Forms.ColumnHeader triangleYColumn;
         private System.Windows.Forms.ColumnHeader trianglePerimeterColumn;
         private System.Windows.Forms.ColumnHeader triangleAreaColumn;
-        private System.Windows.Forms.ListView rectangtlesListView;
+        private System.Windows.Forms.ListView rectanglesListView;
         private System.Windows.Forms.ColumnHeader rectangleXColumn;
         private System.Windows.Forms.ColumnHeader rectangleYColumn;
         private System.Windows.Forms.ColumnHeader rectanglePerimeterColumn;
@@ -940,11 +926,13 @@
         private System.Windows.Forms.ColumnHeader triangleP1Column;
         private System.Windows.Forms.ColumnHeader triangleP2Column;
         private System.Windows.Forms.ColumnHeader triangleP3Column;
-        private System.Windows.Forms.ColumnHeader rectangleX1Column;
-        private System.Windows.Forms.ColumnHeader rectangleY1Column;
-        private System.Windows.Forms.ColumnHeader rectangleX2Column;
-        private System.Windows.Forms.ColumnHeader rectangleY2Column;
+        private System.Windows.Forms.ColumnHeader rectangleLeftUpColumn;
+        private System.Windows.Forms.ColumnHeader rectangleRightDownColumn;
         private System.Windows.Forms.ColumnHeader rectangleHeightColumn;
         private System.Windows.Forms.ColumnHeader rectangleWidthColumn;
+        private System.Windows.Forms.ColumnHeader pointFigureIdx;
+        private System.Windows.Forms.ColumnHeader circleFigureIdx;
+        private System.Windows.Forms.ColumnHeader triangleFigureIdx;
+        private System.Windows.Forms.ColumnHeader rectangleFigureIdx;
     }
 }

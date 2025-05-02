@@ -51,9 +51,15 @@ namespace Data.Repositories
             return outputString.ToString();
         }
 
+        public List<Figure> GetFiguresList()
+        {
+            return figuresList;
+        }
+
         public void DeleteByIndex(int idx)
         {
             figuresList.RemoveAt(idx);
+            Serialize();
         }
 
         public void ChangeByIndex(int idx, Figure fig)
