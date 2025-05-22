@@ -56,6 +56,9 @@
     <Compile Include="prac_20\MainPrac20.cs" />
     <Compile Include="prac_21\MainPrac21.cs" />
     <Compile Include="prac_21\MyBinaryTree.cs" />
+    <Compile Include="prac_22\CityEntity.cs" />
+    <Compile Include="prac_22\MainPrac22.cs" />
+    <Compile Include="prac_22\MyGraph.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="prac_18\Rectangle.cs" />
@@ -69,6 +72,8 @@
     <Content Include="prac_20\input.txt" />
     <Content Include="prac_20\output.txt" />
     <Content Include="prac_21\input.txt" />
+    <Content Include="prac_22\input.txt" />
+    <Content Include="prac_22\input223.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

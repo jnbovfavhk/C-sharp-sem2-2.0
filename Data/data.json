@@ -22,11 +22,6 @@
     "y": 0.0
   },
   {
-    "Type": "PointFigure",
-    "x": 0.0,
-    "y": 344.0
-  },
-  {
     "Type": "Circle",
     "x": 3.0,
     "y": 2.0,
@@ -61,5 +56,10 @@
     "pointRightDown": "PointFigure(10,5, 3)",
     "height": 6.0,
     "width": 9.0
+  },
+  {
+    "Type": "PointFigure",
+    "x": 67.0,
+    "y": 0.0
   }
 ]
