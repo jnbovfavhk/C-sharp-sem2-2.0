@@ -149,7 +149,6 @@ namespace ConsoleApp1.prac_20
                         temp = temp.Next;
                     }
 
-                    
                 }
 
                 // Если temp стал последним
@@ -159,6 +158,7 @@ namespace ConsoleApp1.prac_20
                     {
                         temp.Next = new Node(temp.Inf);
                         temp = temp.Next;
+                        tail = temp;
                     }
                     temp = temp.Next;
                     

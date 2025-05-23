@@ -1,0 +1,65 @@
+[
+  {
+    "Type": "Circle",
+    "x": 1.0,
+    "y": 4.0,
+    "radius": 9.0
+  },
+  {
+    "Type": "Rectangle",
+    "x": 56.0,
+    "y": 0.0,
+    "pointLeftUp": "PointFigure(51,5, 3)",
+    "pointRightUp": "PointFigure(60,5, 3)",
+    "pointLeftDown": "PointFigure(51,5, -3)",
+    "pointRightDown": "PointFigure(60,5, -3)",
+    "height": 6.0,
+    "width": 9.0
+  },
+  {
+    "Type": "PointFigure",
+    "x": 0.0,
+    "y": 0.0
+  },
+  {
+    "Type": "Circle",
+    "x": 3.0,
+    "y": 2.0,
+    "radius": 9.0
+  },
+  {
+    "Type": "Triangle",
+    "x": 5.333333333333333,
+    "y": -0.66666666666666663,
+    "point1": "PointFigure(3, 2)",
+    "point2": "PointFigure(4, 0)",
+    "point3": "PointFigure(9, -4)"
+  },
+  {
+    "Type": "Rectangle",
+    "x": 0.0,
+    "y": 23.0,
+    "pointLeftUp": "PointFigure(-4,5, 26,5)",
+    "pointRightUp": "PointFigure(4,5, 26,5)",
+    "pointLeftDown": "PointFigure(-4,5, 19,5)",
+    "pointRightDown": "PointFigure(4,5, 19,5)",
+    "height": 7.0,
+    "width": 9.0
+  },
+  {
+    "Type": "Rectangle",
+    "x": 6.0,
+    "y": 6.0,
+    "pointLeftUp": "PointFigure(1,5, 9)",
+    "pointRightUp": "PointFigure(10,5, 9)",
+    "pointLeftDown": "PointFigure(1,5, 3)",
+    "pointRightDown": "PointFigure(10,5, 3)",
+    "height": 6.0,
+    "width": 9.0
+  },
+  {
+    "Type": "PointFigure",
+    "x": 67.0,
+    "y": 0.0
+  }
+]
