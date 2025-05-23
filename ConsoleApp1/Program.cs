@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.prac_20;
 using ConsoleApp1.prac_21;
+using ConsoleApp1.prac_22;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace ConsoleApp1
     {
         public static void Main(String[] args)
         {
-            MyGraph graph = MyGraph();
+            MainPrac22.Execute();
+            Console.WriteLine("\n");
+            Console.ReadLine();
         }
     }
 }

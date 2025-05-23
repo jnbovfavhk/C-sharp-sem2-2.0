@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
-namespace Example
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1.prac_22
 {
-    public class Graph
     {
         private class Node //вложенный класс для скрытия данных и алгоритмов
         {
@@ -25,8 +29,8 @@ namespace Example
                     return array.GetLength(0);
                 }
             }
-            private bool[] nov; //вспомогательный массив: если i-ый элемент массива равен 
-                                //true, то i-ая вершина еще не просмотрена; если i-ый 
+            private bool[] nov; //вспомогательный массив: если i-ый элемент массива равен
+                                //true, то i-ая вершина еще не просмотрена; если i-ый
                                 //элемент равен false, то i-ая вершина просмотрена
             public void NovSet() //метод помечает все вершины графа как непросмотреные
             {
@@ -42,16 +46,17 @@ namespace Example
                 array = a;
                 nov = new bool[a.GetLength(0)];
             }
-//реализация алгоритма обхода графа в глубину
+
+            //реализация алгоритма обхода графа в глубину
 385
-public void Dfs(int v)
+            public void Dfs(int v)
             {
                 Console.Write("{0} ", v); //просматриваем текущую вершину
                 nov[v] = false; //помечаем ее как просмотренную
-                                // в матрице смежности просматриваем строку с номером v 
+                                // в матрице смежности просматриваем строку с номером v
                 for (int u = 0; u < Size; u++)
                 {
-                    //если вершины v и u смежные, к тому же вершина u не просмотрена, 
+                    //если вершины v и u смежные, к тому же вершина u не просмотрена,
                     if (array[v, u] != 0 && nov[u])
                     {
                         Dfs(u); // то рекурсивно просматриваем вершину
@@ -61,24 +66,19 @@ public void Dfs(int v)
             //реализация алгоритма обхода графа в ширину
             public void Bfs(int v)
             {
-                Queue q = new Queue(); // инициализируем очередь
-                q.Add(v); //помещаем вершину v в очередь
                 nov[v] = false; // помечаем вершину v как просмотренную
-                while (!q.IsEmpty) // пока очередь не пуста
                 {
-                    v = q.Take(); //извлекаем вершину из очереди
                     Console.Write("{0} ", v); //просматриваем ее
                     for (int u = 0; u < Size; u++) //находим все вершины
                     {
                         if (array[v, u] != 0 && nov[u]) // смежные с данной и еще не просмотренные
                         {
-                            q.Add(u); //помещаем их в очередь
                             nov[u] = false; //и помечаем как просмотренные
                         }
                     }
                 }
             }
-            //реализация алгоритма Дейкстры 
+            //реализация алгоритма Дейкстры
             public long[] Dijkstr(int v, out int[] p)
             {
                 nov[v] = false; // помечаем вершину v как просмотренную
@@ -136,10 +136,9 @@ public void Dfs(int v)
                         }
                     }
                 }
-                return d; //в качестве результата возвращаем массив кратчайших путей для 
+                return d; //в качестве результата возвращаем массив кратчайших путей для
             } //заданного источника
-              //восстановление пути от вершины a до вершины b для алгоритма Дейкстры
-            public void WayDijkstr(int a, int b, int[] p, ref Stack items)
+                //восстановление пути от вершины a до вершины b для алгоритма Дейкстры
             {
                 items.Push(b); //помещаем вершину b в стек
                 if (a == p[b]) //если предыдущей для вершины b является вершина а, то
@@ -198,130 +197,185 @@ public void Dfs(int v)
                         }
                     }
                 }
-                return a;//в качестве результата возвращаем массив кратчайших путей между 
+                return a;//в качестве результата возвращаем массив кратчайших путей между
             } //всеми парами вершин
-              //восстановление пути от вершины a до вершины в для алгоритма Флойда
-            public void WayFloyd(int a, int b, int[,] p, ref Queue items)
-        388
-{
-int k = p[a, b];
-//если k<> -1, то путь состоит более чем из двух вершин а и b, и проходит через 
-//вершину k, поэтому
-if (k!=-1)
-{
-// рекурсивно восстанавливаем путь между вершинами а и k
-WayFloyd(a, k, p, ref items);
-            items.Add(k); //помещаем вершину к в очередь
-// рекурсивно восстанавливаем путь между вершинами k и b
-WayFloyd(k, b, p, ref items);
-        }
-    }
-} //конец вложенного клаcса
-private Node graph; //закрытое поле, реализующее АТД «граф»
-public Graph(string name) //конструктор внешнего класса
-{
-    using (StreamReader file = new StreamReader(name))
-    {
-        int n = int.Parse(file.ReadLine());
-        int[,] a = new int[n, n];
-        for (int i = 0; i < n; i++)
-        {
-            string line = file.ReadLine();
-            string[] mas = line.Split(' ');
-            for (int j = 0; j < n; j++)
+                //восстановление пути от вершины a до вершины в для алгоритма Флойда
             {
-                a[i, j] = int.Parse(mas[j]);
-            }
-        }
-        graph = new Node(a);
-    }
-}
-//метод выводит матрицу смежности на консольное окно
-public void Show()
-{
-    for (int i = 0; i < graph.Size; i++)
-    {
-        for (int j = 0; j < graph.Size; j++)
-        {
-            Console.Write("{0,4}", graph[i, j]);
-        }
-        Console.WriteLine();
-    }
-}
-public void Dfs(int v)
-{
-    graph.NovSet();//помечаем все вершины графа как непросмотренные
-    graph.Dfs(v); //запускаем алгоритм обхода графа в глубину
-    Console.WriteLine();
-}
-389
-public void Bfs(int v)
-{
-    graph.NovSet();//помечаем все вершины графа как непросмотренные
-    graph.Bfs(v); //запускаем алгоритм обхода графа в ширину
-    Console.WriteLine();
-}
-public void Dijkstr(int v)
-{
-    graph.NovSet();//помечаем все вершины графа как непросмотренные
-    int[] p;
-    long[] d = graph.Dijkstr(v, out p); //запускаем алгоритм Дейкстры
-                                        //анализируем полученные данные и выводим их на экран
-    Console.WriteLine("Длина кратчайшие пути от вершины {0} до вершины", v);
-    for (int i = 0; i < graph.Size; i++)
-    {
-        if (i != v)
-        {
-            Console.Write("{0} равна {1}, ", i, d[i]);
-            Console.Write("путь ");
-            if (d[i] != int.MaxValue)
-            {
-                Stack items = new Stack();
-                graph.WayDijkstr(v, i, p, ref items);
-                while (!items.IsEmpty)
+                int k = p[a, b];
+                //если k<> -1, то путь состоит более чем из двух вершин а и b, и проходит через
+                //вершину k, поэтому
                 {
-                    Console.Write("{0} ", items.Pop());
+                    // рекурсивно восстанавливаем путь между вершинами а и k
+                    WayFloyd(a, k, p, ref items);
+                                        // рекурсивно восстанавливаем путь между вершинами k и b
+                    WayFloyd(k, b, p, ref items);
                 }
             }
-        }
-        Console.WriteLine();
-    }
-}
-public void Floyd()
-{
-    int[,] p;
-    long[,] a = graph.Floyd(out p); //запускаем алгоритм Флойда
-    int i, j;
-    //анализируем полученные данные и выводим их на экран
-    for (i = 0; i < graph.Size; i++)
-    {
-        for (j = 0; j < graph.Size; j++)
+        } //конец вложенного клаcса
+
+        private Node graph; //закрытое поле, реализующее АТД «граф»
         {
-            if (i != j)
+            using (StreamReader file = new StreamReader(name))
             {
-                if (a[i, j] == int.MaxValue)
+                int n = int.Parse(file.ReadLine());
+                int[,] a = new int[n, n];
+                for (int i = 0; i < n; i++)
                 {
-                    Console.WriteLine("Пути из вершины {0} в вершину {1} не существует", i, j);
-                }
-                else
-                {
-                    Console.Write("Кратчайший путь от вершины {0} до вершины {1} 
-                    равен { 2}, ", i, j, a[i,j]);
-                390
-                Console.Write(" путь ");
-                    Queue items = new Queue();
-                    items.Add(i);
-                    graph.WayFloyd(i, j, p, ref items);
-                    items.Add(j);
-                    while (!items.IsEmpty)
+                    string line = file.ReadLine();
+                    string[] mas = line.Split(' ');
+                    for (int j = 0; j < n; j++)
                     {
-                        Console.Write("{0} ", items.Take());
+                        a[i, j] = int.Parse(mas[j]);
                     }
-                    Console.WriteLine();
                 }
+                graph = new Node(a);
+            }
+        }
+
+        public MyGraph(int[,] inputList)
+        {
+            graph = new Node(inputList);
+        }
+
+        //метод выводит матрицу смежности на консольное окно
+        public void Show()
+        {
+            for (int i = 0; i < graph.Size; i++)
+            {
+                for (int j = 0; j < graph.Size; j++)
+                {
+                    Console.Write("{0,4}", graph[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public int Size()
+        {
+            return graph.Size;
+        }
+        public void Dfs(int v)
+        {
+            graph.Dfs(v); //запускаем алгоритм обхода графа в глубину
+            Console.WriteLine();
+        }
+389
+        public void Bfs(int v)
+        {
+            graph.Bfs(v); //запускаем алгоритм обхода графа в ширину
+            Console.WriteLine();
+        }
+        public void Dijkstr(int v)
+        {
+            int[] p;
+            long[] d = graph.Dijkstr(v, out p); //запускаем алгоритм Дейкстры
+                                                //анализируем полученные данные и выводим их на экран
+            for (int i = 0; i < graph.Size; i++)
+            {
+                if (i != v)
+                {
+                    Console.Write("{0} равна {1}, ", i, d[i]);
+                    Console.Write("путь ");
+                    if (d[i] != int.MaxValue)
+                    {
+                        graph.WayDijkstr(v, i, p, ref items);
+                        {
+                            Console.Write("{0} ", items.Pop());
+                        }
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+        public void Floyd()
+        {
+            int[,] p;
+            long[,] a = graph.Floyd(out p); //запускаем алгоритм Флойда
+            int i, j;
+            //анализируем полученные данные и выводим их на экран
+            for (i = 0; i < graph.Size; i++)
+            {
+                for (j = 0; j < graph.Size; j++)
+                {
+                    if (i != j)
+                    {
+                        if (a[i, j] == int.MaxValue)
+                        {
+                            Console.WriteLine("Пути из вершины {0} в вершину {1} не существует", i, j);
+                        }
+                        else
+                        {
+                            Console.Write(" путь ");
+                            graph.WayFloyd(i, j, p, ref items);
+                            {
+                            }
+                            Console.WriteLine();
+                        }
+                    }
+                }
+            }
+        }
+        // Количество вершин смежных с данной
+        public int AdjacentElementsCount(int idx)
+        {
+            int answer = 0;
+            for (int j = 0; j < graph.Size; j++)
+            {
+                if (graph[idx, j] != 0)
+                {
+                    answer++;
+                }
+            }
+            return answer;
+        }
+        public bool WriteReachableElements(int idx)
+        {
+            graph.NovSet();
+            graph.Dfs(idx);
+            Console.WriteLine();
+            return true;
+        }
+
+        public void ReplaceElementInMatrix(int i, int j, int newValue)
+        {
+            graph[i, j] = newValue;
+        }
+
+        public void PathFromAToBIncludingC(int a, int b, int c)
+        {
+            graph.NovSet(); //помечаем все вершины графа как непросмотренные
+            int[] p;
+            long[] distAtoC = graph.Dijkstr(a, out p);
+
+            // Ищем длину пути от A до C
+            Console.WriteLine("Длина кратчайшего пути от вершины {0} до вершины {1} проходящего через {2} равна", a, b, c);
+            //Console.Write("{0} равен {1}, ", c, distAtoC[c]);
+            //Console.Write("путь ");
+            
+            // Ищем путь от A до C
+            Stack<int> items = new Stack<int>();
+            graph.WayDijkstr(a, c, p, ref items);
+            
+            // 
+            List<int> resultList = new List<int>(items);
+            resultList.RemoveAt(resultList.Count - 1);
+
+            graph.NovSet();
+            p = null;
+            long[] distCtoB = graph.Dijkstr(c, out p);
+
+            // Ищем путь от C до B
+            items = new Stack<int>();
+            graph.WayDijkstr(c, b, p, ref items);
+
+            resultList.AddRange(new List<int>(items));
+
+            Console.WriteLine(distAtoC[c] + distCtoB[b]);
+            Console.Write("Путь: ");
+            foreach (int element in resultList) {
+                Console.Write(element);
             }
         }
     }
 }
-}
-}
+
