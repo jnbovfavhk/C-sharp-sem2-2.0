@@ -279,7 +279,7 @@ namespace ConsoleApp1.prac_22
             int[] p;
             long[] d = graph.Dijkstr(v, out p); //запускаем алгоритм Дейкстры
                                                 //анализируем полученные данные и выводим их на экран
-            Console.WriteLine("Длина кратчайшие пути от вершины {0} до вершины", v);
+            Console.WriteLine("Длина кратчайшего пути от вершины {0} до вершины", v);
             for (int i = 0; i < graph.Size; i++)
             {
                 if (i != v)
@@ -346,7 +346,7 @@ namespace ConsoleApp1.prac_22
             }
             return answer;
         }
-        public bool WriteREachableElements(int idx)
+        public bool WriteReachableElements(int idx)
         {
             graph.NovSet();
             graph.Dfs(idx);

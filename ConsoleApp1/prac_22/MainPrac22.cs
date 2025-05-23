@@ -29,7 +29,7 @@ namespace ConsoleApp1.prac_22
 
             Console.WriteLine("Вершины, достижимые из данной: ");
             v = GetInputInt(graph.Size());
-            graph.WriteREachableElements(v);
+            graph.WriteReachableElements(v);
 
             Task3Execute();
 

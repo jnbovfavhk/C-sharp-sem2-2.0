@@ -14,6 +14,8 @@ namespace ConsoleApp1
         public static void Main(String[] args)
         {
             MainPrac22.Execute();
+            Console.WriteLine("\n");
+            Console.ReadLine();
         }
     }
 }
