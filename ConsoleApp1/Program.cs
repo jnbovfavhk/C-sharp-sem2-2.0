@@ -12,8 +12,7 @@ namespace ConsoleApp1
     {
         public static void Main(String[] args)
         {
-            MainPrac20.Execute();
-            MainPrac21.Execute();
+            MyGraph graph = MyGraph();
         }
     }
 }
