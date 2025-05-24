@@ -372,7 +372,7 @@ namespace ConsoleApp1.prac_22
             graph[i, j] = newValue;
         }
 
-        public void PathFromAToBIncludingC(int a, int b, int c)
+        public List<int> PathFromAToBIncludingC(int a, int b, int c)
         {
             graph.NovSet(); //помечаем все вершины графа как непросмотренные
             int[] p;
@@ -406,7 +406,11 @@ namespace ConsoleApp1.prac_22
             foreach (int element in resultList)
             {
                 Console.Write(element);
+                Console.Write(' ');
             }
+            Console.Write('\n');
+
+            return resultList;
         }
     }
 }

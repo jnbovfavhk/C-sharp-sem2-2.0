@@ -110,7 +110,14 @@ namespace ConsoleApp1.prac_22
                 graph.Dijkstr(idxC);
 
                 Console.WriteLine("\nТеперь найдем ответ на задачу\n");
-                graph.PathFromAToBIncludingC(idxA, idxB, idxC);
+                List<int> path = graph.PathFromAToBIncludingC(idxA, idxB, idxC);
+
+                Console.WriteLine("Итого путь:");
+                foreach (int idx in path)
+                {
+                    Console.WriteLine(citiesList[idx].GetName());
+                }
+
             }
 
         }
