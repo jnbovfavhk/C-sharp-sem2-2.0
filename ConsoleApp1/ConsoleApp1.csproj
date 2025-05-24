@@ -73,6 +73,7 @@
     <Content Include="prac_20\output.txt" />
     <Content Include="prac_21\input.txt" />
     <Content Include="prac_22\input.txt" />
+    <Content Include="prac_22\input2.txt" />
     <Content Include="prac_22\input223.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

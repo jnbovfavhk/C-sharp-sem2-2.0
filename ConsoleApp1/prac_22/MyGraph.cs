@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.prac_22
 {
+    public class MyGraph
     {
         private class Node //вложенный класс для скрытия данных и алгоритмов
         {
@@ -48,7 +49,6 @@ namespace ConsoleApp1.prac_22
             }
 
             //реализация алгоритма обхода графа в глубину
-385
             public void Dfs(int v)
             {
                 Console.Write("{0} ", v); //просматриваем текущую вершину
@@ -66,13 +66,18 @@ namespace ConsoleApp1.prac_22
             //реализация алгоритма обхода графа в ширину
             public void Bfs(int v)
             {
+                Queue<int> q = new Queue<int>(); // инициализируем очередь
+                q.Enqueue(v); //помещаем вершину v в очередь
                 nov[v] = false; // помечаем вершину v как просмотренную
+                while (q.Count > 0) // пока очередь не пуста
                 {
+                    v = q.Dequeue(); //извлекаем вершину из очереди
                     Console.Write("{0} ", v); //просматриваем ее
                     for (int u = 0; u < Size; u++) //находим все вершины
                     {
                         if (array[v, u] != 0 && nov[u]) // смежные с данной и еще не просмотренные
                         {
+                            q.Enqueue(u); //помещаем их в очередь
                             nov[u] = false; //и помечаем как просмотренные
                         }
                     }
@@ -96,7 +101,6 @@ namespace ConsoleApp1.prac_22
                         {
                             c[i, u] = array[i, u];
                         }
-                        386
                     }
                 }
                 //создаем матрицы d и p
@@ -138,7 +142,8 @@ namespace ConsoleApp1.prac_22
                 }
                 return d; //в качестве результата возвращаем массив кратчайших путей для
             } //заданного источника
-                //восстановление пути от вершины a до вершины b для алгоритма Дейкстры
+              //восстановление пути от вершины a до вершины b для алгоритма Дейкстры
+            public void WayDijkstr(int a, int b, int[] p, ref Stack<int> items)
             {
                 items.Push(b); //помещаем вершину b в стек
                 if (a == p[b]) //если предыдущей для вершины b является вершина а, то
@@ -148,10 +153,8 @@ namespace ConsoleApp1.prac_22
                 else //иначе метод рекурсивно вызывает сам себя для поиска пути
                 { //от вершины а до вершины, предшествующей вершине b
                     WayDijkstr(a, p[b], p, ref items);
-                    387
                 }
             }
-
             //реализация алгоритма Флойда
             public long[,] Floyd(out int[,] p)
             {
@@ -199,21 +202,25 @@ namespace ConsoleApp1.prac_22
                 }
                 return a;//в качестве результата возвращаем массив кратчайших путей между
             } //всеми парами вершин
-                //восстановление пути от вершины a до вершины в для алгоритма Флойда
+              //восстановление пути от вершины a до вершины в для алгоритма Флойда
+            public void WayFloyd(int a, int b, int[,] p, ref Queue<int> items)
             {
                 int k = p[a, b];
                 //если k<> -1, то путь состоит более чем из двух вершин а и b, и проходит через
                 //вершину k, поэтому
+                if (k != -1)
                 {
                     // рекурсивно восстанавливаем путь между вершинами а и k
                     WayFloyd(a, k, p, ref items);
-                                        // рекурсивно восстанавливаем путь между вершинами k и b
+                    items.Enqueue(k); //помещаем вершину к в очередь
+                                      // рекурсивно восстанавливаем путь между вершинами k и b
                     WayFloyd(k, b, p, ref items);
                 }
             }
         } //конец вложенного клаcса
 
         private Node graph; //закрытое поле, реализующее АТД «граф»
+        public MyGraph(string name) //конструктор внешнего класса
         {
             using (StreamReader file = new StreamReader(name))
             {
@@ -237,6 +244,19 @@ namespace ConsoleApp1.prac_22
             graph = new Node(inputList);
         }
 
+        // Индексатор
+        public int this[int i, int j] 
+        {
+            get
+            {
+                return graph[i, j];
+            }
+            set
+            {
+                graph[i, j] = value;
+            }
+        }
+
         //метод выводит матрицу смежности на консольное окно
         public void Show()
         {
@@ -244,7 +264,7 @@ namespace ConsoleApp1.prac_22
             {
                 for (int j = 0; j < graph.Size; j++)
                 {
-                    Console.Write("{0,4}", graph[i, j]);
+                    Console.Write("{0,4} ", graph[i, j]);
                 }
                 Console.WriteLine();
             }
@@ -256,20 +276,23 @@ namespace ConsoleApp1.prac_22
         }
         public void Dfs(int v)
         {
+            graph.NovSet(); //помечаем все вершины графа как непросмотренные
             graph.Dfs(v); //запускаем алгоритм обхода графа в глубину
             Console.WriteLine();
         }
-389
         public void Bfs(int v)
         {
+            graph.NovSet(); //помечаем все вершины графа как непросмотренные
             graph.Bfs(v); //запускаем алгоритм обхода графа в ширину
             Console.WriteLine();
         }
         public void Dijkstr(int v)
         {
+            graph.NovSet(); //помечаем все вершины графа как непросмотренные
             int[] p;
             long[] d = graph.Dijkstr(v, out p); //запускаем алгоритм Дейкстры
                                                 //анализируем полученные данные и выводим их на экран
+            Console.WriteLine("Длина кратчайшего пути от вершины {0} до вершины", v);
             for (int i = 0; i < graph.Size; i++)
             {
                 if (i != v)
@@ -278,7 +301,9 @@ namespace ConsoleApp1.prac_22
                     Console.Write("путь ");
                     if (d[i] != int.MaxValue)
                     {
+                        Stack<int> items = new Stack<int>();
                         graph.WayDijkstr(v, i, p, ref items);
+                        while (items.Count > 0)
                         {
                             Console.Write("{0} ", items.Pop());
                         }
@@ -305,9 +330,15 @@ namespace ConsoleApp1.prac_22
                         }
                         else
                         {
+                            Console.Write("Кратчайший путь от вершины {0} до вершины {1} равен {2}, ", i, j, a[i, j]);
                             Console.Write(" путь ");
+                            Queue<int> items = new Queue<int>();
+                            items.Enqueue(i);
                             graph.WayFloyd(i, j, p, ref items);
+                            items.Enqueue(j);
+                            while (items.Count > 0)
                             {
+                                Console.Write("{0} ", items.Dequeue());
                             }
                             Console.WriteLine();
                         }
@@ -351,11 +382,11 @@ namespace ConsoleApp1.prac_22
             Console.WriteLine("Длина кратчайшего пути от вершины {0} до вершины {1} проходящего через {2} равна", a, b, c);
             //Console.Write("{0} равен {1}, ", c, distAtoC[c]);
             //Console.Write("путь ");
-            
+
             // Ищем путь от A до C
             Stack<int> items = new Stack<int>();
             graph.WayDijkstr(a, c, p, ref items);
-            
+
             // 
             List<int> resultList = new List<int>(items);
             resultList.RemoveAt(resultList.Count - 1);
@@ -372,10 +403,10 @@ namespace ConsoleApp1.prac_22
 
             Console.WriteLine(distAtoC[c] + distCtoB[b]);
             Console.Write("Путь: ");
-            foreach (int element in resultList) {
+            foreach (int element in resultList)
+            {
                 Console.Write(element);
             }
         }
     }
 }
-

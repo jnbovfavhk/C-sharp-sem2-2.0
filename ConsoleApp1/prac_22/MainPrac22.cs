@@ -11,7 +11,7 @@ namespace ConsoleApp1.prac_22
     class MainPrac22
     {
         public static void Execute() {
-            MyGraph graph = new MyGraph(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\prac_22\\input.txt"));
+            MyGraph graph = new MyGraph(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\prac_22\\input2.txt"));
 
             Console.WriteLine("Задание 1. В входном файле указывается количество вершин графа/орграфа и матрица смежности:" +
                 "\nДля заданного графа подсчитать количество вершин, смежных с данной");
@@ -25,10 +25,10 @@ namespace ConsoleApp1.prac_22
             Console.WriteLine("Количество вершин, смежных с данной: " + graph.AdjacentElementsCount(v));
             Console.WriteLine("Задание 2. Найти все вершины графа, достижимые из данной");
 
-            
 
-            Console.WriteLine("Вершины, достижимые из данной: ");
             v = GetInputInt(graph.Size());
+            Console.WriteLine("Вершины, достижимые из данной: ");
+            
             graph.WriteReachableElements(v);
 
             Task3Execute();
@@ -85,19 +85,30 @@ namespace ConsoleApp1.prac_22
                 {
                     for (int j = 0; j < n; j++)
                     {
-                        int distance = citiesList[i].Distance(citiesList[j]);
+                        if (graph[i, j] != 0)
+                        {
+                            
+                            int distance = citiesList[i].Distance(citiesList[j]);
+                            
 
-                        graph.ReplaceElementInMatrix(i, j, distance);
-                        graph.ReplaceElementInMatrix(j, i, distance);
+
+                            graph.ReplaceElementInMatrix(i, j, distance);
+                            graph.ReplaceElementInMatrix(j, i, distance);
+                        }
                     }
                 }
-
+                Console.WriteLine("\nГраф, преобразованный в взвешенный:");
+                graph.Show();
                 int idxA = GetValidCityIndex("A", citiesList);
                 int idxB = GetValidCityIndex("B", citiesList);
                 int idxC = GetValidCityIndex("C", citiesList);
 
                 Console.WriteLine("Сначал найдем все кратчайшие пути из A");
                 graph.Dijkstr(idxA);
+
+                Console.WriteLine("Теперь найдем все кратчайшие пути из C");
+                graph.Dijkstr(idxC);
+
                 Console.WriteLine("\nТеперь найдем ответ на задачу\n");
                 graph.PathFromAToBIncludingC(idxA, idxB, idxC);
             }
