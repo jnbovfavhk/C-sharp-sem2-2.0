@@ -87,7 +87,7 @@ namespace ConsoleApp1.prac_22
             public long[] Dijkstr(int v, out int[] p)
             {
                 nov[v] = false; // помечаем вершину v как просмотренную
-                                //создаем матрицу с
+                                //создаем матрицу с(кратчайшие пути)
                 int[,] c = new int[Size, Size];
                 for (int i = 0; i < Size; i++)
                 {
@@ -387,7 +387,7 @@ namespace ConsoleApp1.prac_22
             Stack<int> items = new Stack<int>();
             graph.WayDijkstr(a, c, p, ref items);
 
-            // 
+            // Удаляем вершину C из результата
             List<int> resultList = new List<int>(items);
             resultList.RemoveAt(resultList.Count - 1);
 
